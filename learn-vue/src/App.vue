@@ -27,6 +27,10 @@ export default {
     display: block;
   }
 
+  .likes.button {
+    cursor: pointer;
+  }
+
   .likes-heart.like-enter {
     transition: all 1s;
     transform: translateX(-50%) translateY(-50%) scale(1);

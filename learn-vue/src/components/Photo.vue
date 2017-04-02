@@ -1,5 +1,5 @@
 <template>
-  <figure class="grid-figure" v-if="post">
+  <figure class="grid-figure">
     <div class="grid-photo-wrap">
       <router-link :to="`/posts/${post.code}`" tag="a">
         <img :src="post.display_src" :alt="post.caption" class="grid-photo" />
@@ -64,6 +64,7 @@
                   });
               }, 200);
 
+              // Cleanup the DOM.
               setTimeout(() => {
                   let index = this.showLikes.findIndex((like) => like.like === newVal);
 

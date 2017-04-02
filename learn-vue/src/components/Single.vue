@@ -1,6 +1,6 @@
 <template>
   <div class="single-photo">
-    <Photo :post="post" :comments="comments"></Photo>
+    <Photo v-if="post" :post="post" :comments="comments"></Photo>
     <!--<Comments :comments="comments" :post="post" />-->
   </div>
 </template>
