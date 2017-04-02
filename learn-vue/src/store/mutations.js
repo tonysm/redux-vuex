@@ -12,5 +12,13 @@ export default {
       post.likes++;
       state.posts.splice(index, 1, post);
     }
+  },
+  [types.ADD_COMMENT] (state, {code, newComment}) {
+    let comments = state.comments[code];
+
+    comments.push({
+      user: newComment.author,
+      text: newComment.text,
+    });
   }
 }

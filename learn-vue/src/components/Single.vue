@@ -1,16 +1,17 @@
 <template>
   <div class="single-photo">
     <Photo v-if="post" :post="post" :comments="comments"></Photo>
-    <!--<Comments :comments="comments" :post="post" />-->
+    <Comments v-if="post && comments" :comments="comments" :post="post"></Comments>
   </div>
 </template>
 
 <script>
   import Photo from './Photo.vue';
+  import Comments from './Comments.vue';
 
   export default {
     name: 'grid',
-    components: {Photo},
+    components: {Photo, Comments},
     computed: {
         post() {
             return this.$store.getters.postByCode(this.$route.params.id);
